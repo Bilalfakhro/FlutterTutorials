@@ -69,13 +69,13 @@ class _HomePageState extends State<HomePage> {
             TextField(
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(hintText: "Enter Number 1"),
               controller: t1,
+              decoration: InputDecoration(hintText: "Enter Number 1."),
             ),
             TextField(
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(hintText: "Enter Number 2"),
+              decoration: InputDecoration(hintText: "Enter Number 2."),
               controller: t2,
             ),
             Padding(

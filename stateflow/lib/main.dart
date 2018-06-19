@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 main() => runApp(new MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     ));
 
@@ -63,15 +64,15 @@ class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
     return new Row(children: <Widget>[
-      // new CounterIncrementor(onPressed: _increment),
-      // new CounterDisplay(count: _counter),
-      new ShoppingList(
-        products: <Product>[
-          new Product(name: 'Eggs'),
-          new Product(name: 'Flour'),
-          new Product(name: 'Chocolate chips'),
-        ],
-      )
+      new CounterIncrementor(onPressed: _increment),
+      new CounterDisplay(count: _counter),
+      // new ShoppingList(
+      //   products: <Product>[
+      //     new Product(name: 'Eggs'),
+      //     new Product(name: 'Flour'),
+      //     new Product(name: 'Chocolate chips'),
+      //   ],
+      // )
     ]);
   }
 }

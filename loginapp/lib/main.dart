@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -8,6 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: new LoginPage(),
       theme: new ThemeData(primarySwatch: Colors.blue),
+      routes: <String, WidgetBuilder>{
+        '/Home': (BuildContext context) => new HomePage()
+      },
     );
   }
 }
@@ -81,7 +85,20 @@ class _LoginPageState extends State<LoginPage>
                             color: Colors.teal,
                             textColor: Colors.white,
                             child: new Text("Login"),
-                            onPressed: () => {},
+                            onPressed: () {
+                              // Navigator.of(context).pushNamedAndRemoveUntil(
+                              //     '/Home', (Route<dynamic> route) => false);
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => HomePage()));
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()),
+                                  (Route<dynamic> route) => false);
+                              // Navigator.pushNamedAndRemoveUntil(context, newRouteName, predicate)
+                            },
                             splashColor: Colors.redAccent,
                             height: 40.0,
                             minWidth: 100.0,

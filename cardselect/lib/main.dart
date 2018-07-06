@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-main() =>runApp(new MyApp());
+main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Selectable Card",
-      home: OrientationList() ,
+      home: OrientationList(),
     );
   }
 }
 
 class OrientationList extends StatelessWidget {
- @override
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new OrientationBuilder(
@@ -42,11 +42,11 @@ class Cardy extends StatefulWidget {
 
 class _CardyState extends State<Cardy> {
   var SelectedState = false;
-  var mycolor=Colors.white;
+  var mycolor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
-    return new Card(
+    return new Container(
       color: mycolor,
       child: new Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
         new ListTile(
@@ -64,10 +64,10 @@ class _CardyState extends State<Cardy> {
   void select() {
     setState(() {
       if (SelectedState) {
-        mycolor=Colors.white;
+        mycolor = Colors.white;
         SelectedState = false;
       } else {
-        mycolor=Colors.grey[300];
+        mycolor = Colors.grey[300];
         SelectedState = true;
       }
     });
